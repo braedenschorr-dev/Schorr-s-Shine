@@ -155,13 +155,14 @@
         <div class="svc-icon"><i class="ti ti-droplet" aria-hidden="true"></i></div>
         <h3 class="svc-name">Exterior Detail</h3>
         <p class="svc-desc">A thorough hand wash, polish, and protective sealant that brings out true depth and gloss. Your paint will look better than it has in years.</p>
-		<div class="svc-includes">
-		<span>
-		::before
-		"Hand wash & dry"
-		</span>
+		      <div class="svc-includes">
+		        <span>
+		        ::before
+		          "Hand wash & dry" 
+		       </span>
+         </div class="svc-includes">
 		<p class="svc-price">Starting at $140</p>
-      </div>
+  </div>
       <div class="svc">
         <div class="svc-icon"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
         <h3 class="svc-name">Interior Detail</h3>
