@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schorr Shine | Mobile Detailing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0a0a0a;color:#e8e0d0;font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2.5rem;border-bottom:0.5px solid rgba(201,168,76,0.25);position:sticky;top:0;background:#0a0a0a;z-index:100}
+    .logo{font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:0.05em;color:#e8e0d0}
+    .logo span{color:#c9a84c}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{color:#a89880;font-size:0.82rem;text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
+    .nav-links a:hover{color:#c9a84c}
+    .nav-cta{background:transparent;border:0.5px solid #c9a84c;color:#c9a84c;padding:0.5rem 1.25rem;font-family:'Inter',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+    .nav-cta:hover{background:#c9a84c;color:#0a0a0a}
+
+    .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:5rem 2.5rem 4rem;border-bottom:0.5px solid rgba(201,168,76,0.15);position:relative}
+    .hero-eyebrow{font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#c9a84c;margin-bottom:1.5rem}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5.5rem);line-height:1.1;color:#f0e8d8;max-width:800px;margin-bottom:1.75rem}
+    .hero-title em{font-style:italic;color:#c9a84c}
+    .hero-sub{font-size:1.05rem;color:#8a7d6e;max-width:480px;line-height:1.8;margin-bottom:2.5rem}
+    .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+    .btn-primary{background:#c9a84c;color:#0a0a0a;border:none;padding:0.85rem 2rem;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+    .btn-primary:hover{background:#e0bc5c}
+    .btn-ghost{background:transparent;border:0.5px solid rgba(201,168,76,0.5);color:#c9a84c;padding:0.85rem 2rem;font-family:'Inter',sans-serif;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+    .btn-ghost:hover{border-color:#c9a84c}
+    .hero-rule{position:absolute;right:2.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:0.75rem;color:#4a3f30;font-size:0.7rem;letter-spacing:0.2em;writing-mode:vertical-rl;text-transform:uppercase}
+    .hero-rule::before,.hero-rule::after{content:'';display:block;width:0.5px;height:60px;background:rgba(201,168,76,0.3)}
+
+    .trust{display:flex;justify-content:space-around;padding:2rem 2.5rem;border-bottom:0.5px solid rgba(201,168,76,0.1);background:#0d0d0d}
+    .trust-item{display:flex;flex-direction:column;align-items:center;gap:0.25rem}
+    .trust-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:#c9a84c;line-height:1}
+    .trust-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#5a4e3e}
+
+    section{padding:5rem 2.5rem}
+    .section-eyebrow{font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:#c9a84c;margin-bottom:0.75rem}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#f0e8d8;margin-bottom:1rem;line-height:1.2}
+    .section-intro{color:#6a5e50;font-size:0.95rem;max-width:540px;line-height:1.9}
+
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(201,168,76,0.1);margin-top:3.5rem}
+    .svc{background:#0a0a0a;padding:2.25rem 1.75rem;transition:background 0.2s;display:flex;flex-direction:column}
+    .svc:hover{background:#0f0e0c}
+    .svc-icon{font-size:1.5rem;color:#c9a84c;margin-bottom:1rem}
+    .svc-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:#e8e0d0;margin-bottom:0.6rem}
+    .svc-desc{font-size:0.85rem;color:#5a4e3e;line-height:1.8;flex:1}
+    .svc-includes{margin-top:1rem;display:flex;flex-direction:column;gap:0.35rem}
+    .svc-includes span{font-size:0.78rem;color:#4a3f30;display:flex;align-items:center;gap:0.4rem}
+    .svc-includes span::before{content:'—';color:rgba(201,168,76,0.35);flex-shrink:0}
+    .svc-price{margin-top:1.25rem;font-size:0.75rem;letter-spacing:0.1em;color:#c9a84c;text-transform:uppercase}
+    .svc-price-note{margin-top:0.3rem;font-size:0.72rem;color:#3a3028;line-height:1.5}
+    .svc-badge{display:inline-block;margin-top:0.6rem;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:rgba(201,168,76,0.1);color:#c9a84c;border:0.5px solid rgba(201,168,76,0.25);padding:0.25rem 0.6rem;align-self:flex-start}
+
+    .why{background:#0d0d0d;border-top:0.5px solid rgba(201,168,76,0.1);border-bottom:0.5px solid rgba(201,168,76,0.1)}
+    .why-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
+    .why-points{display:flex;flex-direction:column;gap:2rem}
+    .why-pt{display:flex;gap:1.25rem;align-items:flex-start}
+    .why-pt-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:rgba(201,168,76,0.2);line-height:1;flex-shrink:0;width:2.5rem}
+    .why-pt-content h3{font-size:0.95rem;font-weight:500;color:#d4c5b0;margin-bottom:0.3rem}
+    .why-pt-content p{font-size:0.85rem;color:#5a4e3e;line-height:1.8}
+    .why-pull{border-left:2px solid rgba(201,168,76,0.3);padding-left:2rem;margin-top:1rem}
+    .why-pull blockquote{font-family:'Playfair Display',serif;font-size:1.5rem;color:#c9a84c;font-style:italic;line-height:1.5;margin-bottom:1.25rem}
+    .why-pull cite{font-size:0.78rem;letter-spacing:0.15em;color:#4a3f30;text-transform:uppercase;font-style:normal}
+
+    .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin-top:3.5rem;background:rgba(201,168,76,0.08)}
+    .step{background:#0a0a0a;padding:2rem 1.5rem;position:relative}
+    .step::after{content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:rgba(201,168,76,0.3);font-size:1rem;z-index:1}
+    .step:last-child::after{display:none}
+    .step-n{font-family:'Playfair Display',serif;font-size:3rem;color:rgba(201,168,76,0.12);line-height:1;margin-bottom:0.75rem}
+    .step-title{font-size:0.9rem;font-weight:500;color:#d4c5b0;margin-bottom:0.4rem}
+    .step-desc{font-size:0.8rem;color:#4a3f30;line-height:1.7}
+
+    .testimonials{background:#0d0d0d;border-top:0.5px solid rgba(201,168,76,0.1)}
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+    .testi-card{background:#0a0a0a;border:0.5px solid rgba(201,168,76,0.12);padding:1.75rem}
+    .stars{color:#c9a84c;font-size:0.85rem;margin-bottom:1rem;letter-spacing:0.1em}
+    .testi-text{font-size:0.88rem;color:#8a7d6e;line-height:1.85;margin-bottom:1.25rem;font-style:italic}
+    .testi-author{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#4a3f30}
+
+    .cta-section{text-align:center;padding:6rem 2.5rem;border-top:0.5px solid rgba(201,168,76,0.1)}
+    .cta-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);color:#f0e8d8;margin-bottom:1.25rem}
+    .cta-sub{color:#5a4e3e;margin-bottom:2.5rem;font-size:0.95rem}
+    .cta-contact{display:flex;justify-content:center;gap:3rem;margin-top:3rem;flex-wrap:wrap}
+    .contact-item{display:flex;flex-direction:column;gap:0.25rem;align-items:center}
+    .contact-label{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#3a3028}
+    .contact-value{font-size:0.95rem;color:#c9a84c}
+
+    footer{padding:1.5rem 2.5rem;border-top:0.5px solid rgba(201,168,76,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-logo{font-family:'Playfair Display',serif;font-size:1rem;color:#3a3028}
+    .footer-copy{font-size:0.75rem;color:#3a3028;letter-spacing:0.05em}
+
+    @media(max-width:640px){
+      nav{padding:1rem 1.25rem}
+      .nav-links{display:none}
+      .hero{padding:4rem 1.25rem 3rem}
+      .hero-rule{display:none}
+      section{padding:3.5rem 1.25rem}
+      .trust{gap:1rem;flex-wrap:wrap;padding:1.75rem 1.25rem}
+      .why-layout{grid-template-columns:1fr;gap:2.5rem}
+      footer{flex-direction:column;text-align:center;padding:1.25rem}
+      .cta-contact{gap:2rem}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Schorr <span>Shine</span></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta">Book Now</button>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-eyebrow">Mobile Detailing · We Come to You</p>
+    <h1 class="hero-title">Your car deserves<br><em>nothing less</em><br>than perfect.</h1>
+    <p class="hero-sub">Schorr Shine brings showroom-quality detailing straight to your driveway. No drop-offs. No waiting. Just an immaculate vehicle — guaranteed.</p>
+    <div class="hero-actions">
+      <button class="btn-primary">Book a Detail</button>
+      <button class="btn-ghost">View Services</button>
+    </div>
+    <div class="hero-rule">Mobile · Premium · Trusted</div>
+  </div>
+
+  <div class="trust">
+    <div class="trust-item">
+      <span class="trust-num">500+</span>
+      <span class="trust-label">Cars Detailed</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">5★</span>
+      <span class="trust-label">Average Rating</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">100%</span>
+      <span class="trust-label">Satisfaction Guarantee</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">2hr</span>
+      <span class="trust-label">Average Service Time</span>
+    </div>
+  </div>
+
+  <section id="services">
+    <p class="section-eyebrow">What We Offer</p>
+    <h2 class="section-title">Every detail, delivered to your door</h2>
+    <p class="section-intro">Whether your car needs a quick refresh or a deep transformation — Schorr Shine handles it with care, precision, and pride.</p>
+    <div class="services-grid">
+
+      <div class="svc">
+        <div class="svc-icon"><i class="ti ti-car" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Coming Soon</h3>
+        <p class="svc-desc">Coming Soon.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Interior Detail</h3>
+        <p class="svc-desc">A deep clean from dashboard to floor mats. We get into every crack, vent, and seam so the inside of your car feels brand new — and smells like it too.</p>
+        <div class="svc-includes">
+          <span>Deep vacuum</span>
+          <span>Steam clean &amp; scrub</span>
+          <span>Leather conditioning</span>
+          <span>Dashboard &amp; console restore</span>
+          <span>Odor elimination</span>
+        </div>
+        <p class="svc-price">Starting at $XXX</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><i class="ti ti-crown" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Coming Soon</h3>
+        <p class="svc-desc">Coming Soon.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><i class="ti ti-calendar-repeat" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Coming Soon</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <p class="section-eyebrow">Why Schorr Shine</p>
+    <h2 class="section-title">We don't just clean cars.<br>We restore pride in them.</h2>
+    <div class="why-layout">
+      <div class="why-points">
+        <div class="why-pt">
+          <span class="why-pt-num">1</span>
+          <div class="why-pt-content">
+            <h3>We come to you — anywhere</h3>
+            <p>At your home, office, or gym. No drop-offs, no waiting rooms. Your day doesn't stop — we fit around it.</p>
+          </div>
+        </div>
+        <div class="why-pt">
+          <span class="why-pt-num">2</span>
+          <div class="why-pt-content">
+            <h3>Professional-grade products only</h3>
+            <p>We use the same compounds and tools found in high-end detailing shops — brought directly to your door.</p>
+          </div>
+        </div>
+        <div class="why-pt">
+          <span class="why-pt-num">3</span>
+          <div class="why-pt-content">
+            <h3>Obsessive attention to detail</h3>
+            <p>We don't rush. Every vent, seam, and surface gets the treatment it deserves. You'll notice the difference in places you'd never expect.</p>
+          </div>
+        </div>
+        <div class="why-pt">
+          <span class="why-pt-num">4</span>
+          <div class="why-pt-content">
+            <h3>Satisfaction, guaranteed</h3>
+            <p>If you're not completely happy with the result, we'll make it right — no questions, no hassle.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-pull">
+        <blockquote>"The difference between a clean car and a Schorr Shine car is something everyone around you will notice."</blockquote>
+        <cite>— Schorr Shine Promise</cite>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <p class="section-eyebrow">How It Works</p>
+    <h2 class="section-title">Simple booking. Extraordinary results.</h2>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div class="step-title">Book online or call</div>
+        <p class="step-desc">Choose your service and pick a time that works for you. Takes less than two minutes.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div class="step-title">We arrive on time</div>
+        <p class="step-desc">Our team shows up fully equipped — water, power, and professional supplies included.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div class="step-title">We get to work</div>
+        <p class="step-desc">You go about your day while we transform your vehicle from top to bottom.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <div class="step-title">You're amazed</div>
+        <p class="step-desc">Inspect every inch. If it's not perfect, we'll stay until it is. Every single time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="reviews">
+    <p class="section-eyebrow">Client Reviews</p>
+    <h2 class="section-title">People who know their cars trust Schorr Shine</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p class="testi-text">"Would definitely recommend Schorr Shine. Did an extremely thorough job while being careful and respective of my vehicle."</p>
+        <span class="testi-author">— Jake M., Altamont NY</span>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p class="testi-text">"Braeden did such a great job detailing my car. He took his time, was very thorough and would not stop until he was satisfied that the car was cleaned to his high expectations. I would highly recommend SchorrShine for all
+Your detailing needs!"</p>
+        <span class="testi-author">— Meredith S., Guilderland NY</span>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p class="testi-text">"New car look and smell! Nice!"</p>
+        <span class="testi-author">— Hassan S., Troy NY</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <p class="section-eyebrow">Ready to Shine?</p>
+    <h2 class="cta-title">Book your detail today.<br>Your car will thank you.</h2>
+    <p class="cta-sub">Mobile detailing available 7 days a week. Same-week appointments often available.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <button class="btn-primary">Book a Detail</button>
+      <button class="btn-ghost">Get a Free Quote</button>
+    </div>
+    <div class="cta-contact">
+      <div class="contact-item">
+        <span class="contact-label">Call or Text</span>
+        <span class="contact-value">(518) 543-7564</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">Schorrshine@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Service Area</span>
+        <span class="contact-value">Capital Region</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Schorr Shine</span>
+    <span class="footer-copy">© 2026 Schorr Shine · Mobile Detailing · All rights reserved</span>
+  </footer>
+
+</body>
+</html>
