@@ -17,7 +17,6 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
-  <script src="https://embed.typeform.com/next/embed.js" defer></script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -126,10 +125,41 @@
     .cta-section{text-align:center;padding:6rem 2.5rem;border-top:0.5px solid rgba(36,120,240,0.1)}
     .cta-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);color:#ffffff;margin-bottom:1.25rem}
     .cta-sub{color:#9fadbb;margin-bottom:2.5rem;font-size:1.05rem}
-    .quote-embed{max-width:720px;margin:2.5rem auto 0;border:0.5px solid rgba(36,120,240,0.3);border-radius:4px;overflow:hidden;background:#0b0e13}
-    .quote-embed .tf-widget{width:100%;height:560px}
-    .quote-fallback{padding:2rem;text-align:center;color:#9fadbb;font-size:0.95rem}
-    .quote-fallback a{color:#2f80f5}
+    .quote-wizard{max-width:640px;margin:2.5rem auto 0;border:0.5px solid rgba(36,120,240,0.3);border-radius:4px;background:#0b0e13;text-align:left;overflow:hidden}
+    .qw-progress{height:4px;background:rgba(36,120,240,0.15)}
+    .qw-progress-fill{height:100%;background:#2f80f5;width:0;transition:width 0.3s ease}
+    .qw-body{padding:2.5rem 2.25rem}
+    .qw-step{display:none}
+    .qw-step.active{display:block;animation:qwIn 0.25s ease}
+    @keyframes qwIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .qw-count{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#2f80f5;margin-bottom:0.75rem}
+    .qw-q{display:block;font-family:'Playfair Display',serif;font-size:1.5rem;color:#ffffff;margin-bottom:0.4rem;line-height:1.3}
+    .qw-optional{font-size:0.8rem;color:#8090a0;margin-bottom:1rem}
+    .qw-step input[type=text],.qw-step input[type=tel],.qw-step input[type=email],.qw-step textarea{background:#070a0f;border:1px solid rgba(36,120,240,0.35);color:#ffffff;padding:0.95rem 1.05rem;font-family:'Inter',sans-serif;font-size:1.05rem;width:100%;border-radius:3px;margin-top:0.75rem}
+    .qw-step input:focus,.qw-step textarea:focus{outline:none;border-color:#2f80f5}
+    .qw-step textarea{resize:vertical;min-height:96px}
+    .qw-options{display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem}
+    .qw-option{display:flex;align-items:center;gap:0.75rem;border:1px solid rgba(36,120,240,0.35);border-radius:3px;padding:0.95rem 1.05rem;cursor:pointer;color:#e8edf3;font-size:1rem;transition:all 0.15s;background:#070a0f}
+    .qw-option:hover{border-color:#2f80f5}
+    .qw-option input{accent-color:#2f80f5;width:1.1rem;height:1.1rem;flex-shrink:0}
+    .qw-option:has(input:checked){border-color:#2f80f5;background:rgba(36,120,240,0.12)}
+    .qw-err{color:#e06a5a;font-size:0.85rem;margin-top:0.6rem;min-height:1.2em}
+    .qw-nav{display:flex;gap:0.75rem;align-items:center;margin-top:1.5rem}
+    .qw-back{background:none;border:none;color:#8090a0;font-size:0.9rem;cursor:pointer;padding:0.75rem 0.5rem}
+    .qw-back:hover{color:#e8edf3}
+    .qw-next{background:#2f80f5;color:#ffffff;border:none;padding:0.85rem 2rem;font-size:0.95rem;font-weight:600;letter-spacing:0.05em;cursor:pointer;border-radius:3px;transition:background 0.2s}
+    .qw-next:hover{background:#5ea0ff}
+    .qw-next:disabled{opacity:0.6;cursor:default}
+    .qw-hint{font-size:0.78rem;color:#6c7987;margin-left:auto}
+    .qw-hint b{color:#8090a0;font-weight:600}
+    .qw-status{margin-top:1rem;font-size:0.85rem;color:#e06a5a;line-height:1.7;min-height:1.2em}
+    .qw-success{text-align:center;padding:3rem 2rem;display:none}
+    .qw-success.active{display:block;animation:qwIn 0.25s ease}
+    .qw-success i{font-size:2.75rem;color:#2f80f5;display:block;margin-bottom:1rem}
+    .qw-success h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:#ffffff;margin-bottom:0.5rem}
+    .qw-success p{color:#9fadbb;font-size:0.95rem;line-height:1.8}
+    .hp-field{position:absolute;left:-9999px;top:-9999px}
+    @media(max-width:640px){.qw-body{padding:1.75rem 1.25rem}.qw-q{font-size:1.25rem}}
     .cta-contact{display:flex;justify-content:center;gap:3rem;margin-top:3rem;flex-wrap:wrap}
     .social-links{display:flex;gap:0.85rem}
     .social-links a{width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;border:1px solid rgba(36,120,240,0.35);border-radius:50%;color:#2f80f5;font-size:1.1rem;transition:all 0.2s}
@@ -289,11 +319,95 @@
     <p class="section-eyebrow">Ready to Shine?</p>
     <h2 class="section-title" style="margin-bottom:0.75rem">Get your free quote today</h2>
     <p class="cta-sub">Tell us about your vehicle — we usually reply within a few hours.</p>
-    <div class="quote-embed" id="quote">
-      <div class="tf-widget" data-tf-widget="VhfbPwWz" data-tf-inline-on-mobile data-tf-medium="snippet"></div>
-      <noscript>
-        <p class="quote-fallback">Our quote form needs JavaScript. You can also fill it out at <a href="https://form.typeform.com/to/VhfbPwWz">form.typeform.com/to/VhfbPwWz</a> or call/text (518) 543-7564.</p>
-      </noscript>
+    <div class="quote-wizard" id="quote">
+      <div class="qw-progress"><div class="qw-progress-fill" id="qwFill"></div></div>
+      <div class="qw-body" id="qwBody">
+        <form name="quote-request" id="quoteForm" data-netlify="true" netlify-honeypot="bot-field" method="POST">
+          <input type="hidden" name="form-name" value="quote-request">
+          <p class="hp-field"><label>Leave this field blank: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <div class="qw-step" data-required="true">
+            <p class="qw-count">1 of 6</p>
+            <label class="qw-q" for="qf-name">First things first — what's your name?</label>
+            <input type="text" id="qf-name" name="name" autocomplete="name" placeholder="Your name">
+            <p class="qw-err" data-msg="Please enter your name so we know who to reach out to."></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-next">Next</button>
+              <span class="qw-hint">or press <b>Enter ↵</b></span>
+            </div>
+          </div>
+
+          <div class="qw-step" data-required="true">
+            <p class="qw-count">2 of 6</p>
+            <label class="qw-q" for="qf-phone">What's the best number to text you a quote?</label>
+            <input type="tel" id="qf-phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555">
+            <p class="qw-err" data-msg="We need a phone number to send your quote."></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+              <span class="qw-hint">or press <b>Enter ↵</b></span>
+            </div>
+          </div>
+
+          <div class="qw-step">
+            <p class="qw-count">3 of 6</p>
+            <label class="qw-q" for="qf-email">Got an email too?</label>
+            <p class="qw-optional">Optional — skip if you'd rather just text.</p>
+            <input type="email" id="qf-email" name="email" autocomplete="email" placeholder="you@example.com">
+            <p class="qw-err" data-msg="That email doesn't look right — fix it or leave it blank."></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+              <span class="qw-hint">or press <b>Enter ↵</b></span>
+            </div>
+          </div>
+
+          <div class="qw-step">
+            <p class="qw-count">4 of 6</p>
+            <label class="qw-q" for="qf-vehicle">What are we detailing?</label>
+            <p class="qw-optional">Year, make &amp; model — optional but helps us quote faster.</p>
+            <input type="text" id="qf-vehicle" name="vehicle" placeholder="e.g. 2018 Honda Accord">
+            <p class="qw-err"></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+              <span class="qw-hint">or press <b>Enter ↵</b></span>
+            </div>
+          </div>
+
+          <div class="qw-step">
+            <p class="qw-count">5 of 6</p>
+            <span class="qw-q">Which service are you interested in?</span>
+            <div class="qw-options">
+              <label class="qw-option"><input type="radio" name="service" value="Interior Detail" checked>Interior Detail</label>
+              <label class="qw-option"><input type="radio" name="service" value="Not sure yet / other">Not sure yet / other</label>
+            </div>
+            <p class="qw-err"></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+            </div>
+          </div>
+
+          <div class="qw-step">
+            <p class="qw-count">6 of 6</p>
+            <label class="qw-q" for="qf-message">Anything else we should know?</label>
+            <p class="qw-optional">Stains, pet hair, preferred dates — optional.</p>
+            <textarea id="qf-message" name="message" placeholder="Type here..."></textarea>
+            <p class="qw-err"></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="submit" class="qw-next" id="qwSubmit">Send Request</button>
+            </div>
+            <p class="qw-status" id="qwStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+      <div class="qw-success" id="qwSuccess">
+        <i class="ti ti-circle-check" aria-hidden="true"></i>
+        <h3>Request sent!</h3>
+        <p>Thanks — we've got your details and will text or email you shortly with a quote.</p>
+      </div>
     </div>
   </section>
 
@@ -484,8 +598,100 @@
         if (!quote) return;
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         quote.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block: 'center'});
+        setTimeout(function() {
+          var field = quote.querySelector('.qw-step.active input, .qw-step.active textarea');
+          if (field) field.focus({preventScroll: true});
+        }, reduceMotion ? 0 : 450);
       });
     });
+
+    // --- Quote wizard ---
+    var qwForm = document.getElementById('quoteForm');
+    var qwSteps = Array.prototype.slice.call(qwForm.querySelectorAll('.qw-step'));
+    var qwFill = document.getElementById('qwFill');
+    var qwStatus = document.getElementById('qwStatus');
+    var qwSubmit = document.getElementById('qwSubmit');
+    var qwCurrent = 0;
+
+    function qwShow(i, skipFocus) {
+      qwCurrent = Math.max(0, Math.min(i, qwSteps.length - 1));
+      qwSteps.forEach(function(s, idx) { s.classList.toggle('active', idx === qwCurrent); });
+      qwFill.style.width = ((qwCurrent + 1) / qwSteps.length * 100) + '%';
+      if (skipFocus) return;
+      var field = qwSteps[qwCurrent].querySelector('input:not([type=radio]):not([type=hidden]), textarea');
+      if (field) field.focus({preventScroll: true});
+    }
+
+    function qwSetError(step, msg) {
+      var err = step.querySelector('.qw-err');
+      if (err) err.textContent = msg || '';
+    }
+
+    function qwValidate(step) {
+      var field = step.querySelector('input:not([type=radio]):not([type=hidden]), textarea');
+      qwSetError(step, '');
+      if (!field) return true;
+      var val = field.value.trim();
+      if (step.dataset.required === 'true' && !val) {
+        qwSetError(step, step.querySelector('.qw-err').dataset.msg || 'This field is required.');
+        field.focus();
+        return false;
+      }
+      if (val && !field.checkValidity()) {
+        qwSetError(step, step.querySelector('.qw-err').dataset.msg || 'Please check this field.');
+        field.focus();
+        return false;
+      }
+      return true;
+    }
+
+    qwForm.addEventListener('click', function(e) {
+      if (e.target.classList.contains('qw-next') && e.target.type !== 'submit') {
+        if (qwValidate(qwSteps[qwCurrent])) qwShow(qwCurrent + 1);
+      } else if (e.target.classList.contains('qw-back')) {
+        qwShow(qwCurrent - 1);
+      }
+    });
+
+    qwForm.addEventListener('keydown', function(e) {
+      if (e.key !== 'Enter') return;
+      var isTextarea = e.target.tagName === 'TEXTAREA';
+      var isLast = qwCurrent === qwSteps.length - 1;
+      if (isTextarea && e.shiftKey) return; // allow newline
+      e.preventDefault();
+      if (!qwValidate(qwSteps[qwCurrent])) return;
+      if (isLast) { qwForm.requestSubmit(); } else { qwShow(qwCurrent + 1); }
+    });
+
+    qwForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!qwValidate(qwSteps[qwCurrent])) return;
+      qwSubmit.disabled = true;
+      qwSubmit.textContent = 'Sending...';
+      qwStatus.textContent = '';
+
+      var body = new URLSearchParams(new FormData(qwForm)).toString();
+      fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        })
+        .then(function(response) {
+          if (!response.ok) throw new Error('Submission failed');
+          document.getElementById('qwBody').style.display = 'none';
+          document.getElementById('qwFill').style.width = '100%';
+          document.getElementById('qwSuccess').classList.add('active');
+        })
+        .catch(function() {
+          qwStatus.textContent = 'Something went wrong — please call or text us instead at (518) 543-7564.';
+        })
+        .finally(function() {
+          qwSubmit.disabled = false;
+          qwSubmit.textContent = 'Send Request';
+        });
+    });
+
+    qwShow(0, true);
   </script>
 
 </body>
