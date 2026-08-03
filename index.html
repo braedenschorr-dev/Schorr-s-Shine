@@ -76,11 +76,11 @@
     .svc:hover{background:#0c1119}
     .svc-icon{font-size:1.5rem;color:#2f80f5;margin-bottom:1rem}
     .svc-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:#e8edf3;margin-bottom:0.6rem}
-    .svc-desc{font-size:0.92rem;color:#9fadbb;line-height:1.85;flex:1}
-    .svc-includes{margin-top:1rem;display:flex;flex-direction:column;gap:0.4rem}
+    .svc-desc{font-size:0.92rem;color:#9fadbb;line-height:1.85}
+    .svc-includes{margin-top:0.5rem;display:flex;flex-direction:column;gap:0.4rem}
     .svc-includes span{font-size:0.84rem;color:#9fadbb;display:flex;align-items:center;gap:0.4rem}
     .svc-includes span::before{content:'—';color:rgba(36,120,240,0.5);flex-shrink:0}
-    .svc-price{margin-top:1.25rem;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;color:#2f80f5;text-transform:uppercase}
+    .svc-price{margin-top:auto;padding-top:1.25rem;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;color:#2f80f5;text-transform:uppercase}
     .svc-price-note{margin-top:0.3rem;font-size:0.78rem;color:#8090a0;line-height:1.5}
     .svc-ideal{margin-top:0.9rem;font-size:0.82rem;color:#8090a0;line-height:1.6}
     .svc-ideal b{color:#2f80f5;font-weight:600}
@@ -314,6 +314,138 @@
     <!-- Elfsight Google Reviews | Untitled Google Reviews -->
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <div class="elfsight-app-932d8de0-d606-4ea4-8cc5-21142c746812" data-elfsight-app-lazy></div>
+  </section>
+
+  <section class="cta-section reveal" id="quote-section">
+    <p class="section-eyebrow">Ready to Shine?</p>
+    <h2 class="cta-title">Get your free quote today.<br>Your car will thank you.</h2>
+    <p class="cta-sub">Mobile detailing available 6 days a week. Same-week appointments often available.</p>
+    <p class="cta-sub" style="margin-top:-1.5rem;font-size:0.9rem;color:#8090a0">Not happy with the results? We'll make it right — no questions, no hassle.</p>
+
+    <div class="quote-wizard" id="quote">
+      <div class="qw-progress"><div class="qw-progress-fill" id="qwFill"></div></div>
+      <div class="qw-body" id="qwBody">
+        <form name="quote-request" id="quoteForm" data-netlify="true" netlify-honeypot="bot-field" method="POST">
+          <input type="hidden" name="form-name" value="quote-request">
+          <p class="hp-field"><label>Leave this field blank: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <div class="qw-step" data-required="true">
+            <p class="qw-count">1 of 7</p>
+            <label class="qw-q" for="qf-name">First things first — what's your name?</label>
+            <input type="text" id="qf-name" name="name" autocomplete="name" placeholder="Your name">
+            <p class="qw-err" data-msg="Please enter your name so we know who to reach out to."></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-next">Next</button>
+              <span class="qw-hint">or press <b>Enter ↵</b></span>
+            </div>
+          </div>
+
+          <div class="qw-step" data-required="true">
+            <p class="qw-count">2 of 7</p>
+            <label class="qw-q" for="qf-phone">What's the best number to text you a quote?</label>
+            <input type="tel" id="qf-phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555">
+            <p class="qw-err" data-msg="We need a phone number to send your quote."></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+              <span class="qw-hint">or press <b>Enter ↵</b></span>
+            </div>
+          </div>
+
+          <div class="qw-step" data-required="true">
+            <p class="qw-count">3 of 7</p>
+            <label class="qw-q" for="qf-email">What's your email?</label>
+            <input type="email" id="qf-email" name="email" autocomplete="email" placeholder="you@example.com">
+            <p class="qw-err" data-msg="Please add a valid email so we can send your quote."></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+              <span class="qw-hint">or press <b>Enter ↵</b></span>
+            </div>
+          </div>
+
+          <div class="qw-step" data-required="true">
+            <p class="qw-count">4 of 7</p>
+            <label class="qw-q" for="qf-address">Where should we come to you?</label>
+            <p class="qw-optional">Since we're mobile, we'll need an address to plan the visit.</p>
+            <input type="text" id="qf-address" name="address" autocomplete="street-address" placeholder="Street address, city">
+            <p class="qw-err" data-msg="Please add an address so we know where to bring the detail."></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+              <span class="qw-hint">or press <b>Enter ↵</b></span>
+            </div>
+          </div>
+
+          <div class="qw-step">
+            <p class="qw-count">5 of 7</p>
+            <label class="qw-q" for="qf-vehicle">What are we detailing?</label>
+            <p class="qw-optional">Year, make &amp; model — optional but helps us quote faster.</p>
+            <input type="text" id="qf-vehicle" name="vehicle" placeholder="e.g. 2018 Honda Accord">
+            <p class="qw-err"></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+              <span class="qw-hint">or press <b>Enter ↵</b></span>
+            </div>
+          </div>
+
+
+          <div class="qw-step">
+            <p class="qw-count">6 of 7</p>
+            <span class="qw-q">Which service are you interested in?</span>
+            <div class="qw-options">
+              <label class="qw-option"><input type="radio" name="service" value="Interior Detail" checked>Interior Detail</label>
+              <label class="qw-option"><input type="radio" name="service" value="Exterior Detail">Exterior Detail</label>
+              <label class="qw-option"><input type="radio" name="service" value="Full Detail Package">Full Detail Package</label>
+              <label class="qw-option"><input type="radio" name="service" value="Ceramic Coating">Ceramic Coating</label>
+              <label class="qw-option"><input type="radio" name="service" value="Paint Correction">Paint Correction</label>
+              <label class="qw-option"><input type="radio" name="service" value="Maintenance Plan">Maintenance Plan</label>
+              <label class="qw-option"><input type="radio" name="service" value="Not sure yet / other">Not sure yet / other</label>
+            </div>
+            <p class="qw-err"></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+            </div>
+          </div>
+
+          <div class="qw-step" data-required="true" data-service-gate="Maintenance Plan">
+            <p class="qw-count">One more thing</p>
+            <span class="qw-q">Have you booked with Schorr Shine before?</span>
+            <p class="qw-optional">Maintenance Plans keep an already-detailed car looking sharp, so we need a baseline to work from first.</p>
+            <div class="qw-options">
+              <label class="qw-option"><input type="radio" name="purchased_before" value="Yes">Yes, I've booked with you before</label>
+              <label class="qw-option"><input type="radio" name="purchased_before" value="No">No, this would be my first time</label>
+            </div>
+            <p class="qw-optional" id="qwMaintNote" hidden>No problem — since Maintenance Plans start after an initial Full Detail, we'll set you up with a Full Detail Package instead. You can start a maintenance plan right after.</p>
+            <p class="qw-err" data-msg="Please let us know if you've booked with us before."></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+            </div>
+          </div>
+
+          <div class="qw-step">
+            <p class="qw-count">7 of 7</p>
+            <label class="qw-q" for="qf-message">Anything else we should know?</label>
+            <p class="qw-optional">Stains, scratches, preferred dates — optional.</p>
+            <textarea id="qf-message" name="message" placeholder="Type here..."></textarea>
+            <p class="qw-err"></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="submit" class="qw-next" id="qwSubmit">Send Request</button>
+            </div>
+            <p class="qw-status" id="qwStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+      <div class="qw-success" id="qwSuccess">
+        <i class="ti ti-circle-check" aria-hidden="true"></i>
+        <h3>Request sent!</h3>
+        <p>Thanks — we've got your details and will text or email you shortly with a quote.</p>
+      </div>
+    </div>
   </section>
 
   <section class="pain reveal">
@@ -560,135 +692,9 @@
   </section>
 
   <section class="cta-section reveal" id="contact">
-    <p class="section-eyebrow">Ready to Shine?</p>
-    <h2 class="cta-title">Get your free quote today.<br>Your car will thank you.</h2>
-    <p class="cta-sub">Mobile detailing available 6 days a week. Same-week appointments often available.</p>
-    <p class="cta-sub" style="margin-top:-1.5rem;font-size:0.9rem;color:#8090a0">Not happy with the results? We'll make it right — no questions, no hassle.</p>
-
-    <div class="quote-wizard" id="quote">
-      <div class="qw-progress"><div class="qw-progress-fill" id="qwFill"></div></div>
-      <div class="qw-body" id="qwBody">
-        <form name="quote-request" id="quoteForm" data-netlify="true" netlify-honeypot="bot-field" method="POST">
-          <input type="hidden" name="form-name" value="quote-request">
-          <p class="hp-field"><label>Leave this field blank: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-
-          <div class="qw-step" data-required="true">
-            <p class="qw-count">1 of 7</p>
-            <label class="qw-q" for="qf-name">First things first — what's your name?</label>
-            <input type="text" id="qf-name" name="name" autocomplete="name" placeholder="Your name">
-            <p class="qw-err" data-msg="Please enter your name so we know who to reach out to."></p>
-            <div class="qw-nav">
-              <button type="button" class="qw-next">Next</button>
-              <span class="qw-hint">or press <b>Enter ↵</b></span>
-            </div>
-          </div>
-
-          <div class="qw-step" data-required="true">
-            <p class="qw-count">2 of 7</p>
-            <label class="qw-q" for="qf-phone">What's the best number to text you a quote?</label>
-            <input type="tel" id="qf-phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555">
-            <p class="qw-err" data-msg="We need a phone number to send your quote."></p>
-            <div class="qw-nav">
-              <button type="button" class="qw-back">← Back</button>
-              <button type="button" class="qw-next">Next</button>
-              <span class="qw-hint">or press <b>Enter ↵</b></span>
-            </div>
-          </div>
-
-          <div class="qw-step" data-required="true">
-            <p class="qw-count">3 of 7</p>
-            <label class="qw-q" for="qf-email">What's your email?</label>
-            <input type="email" id="qf-email" name="email" autocomplete="email" placeholder="you@example.com">
-            <p class="qw-err" data-msg="Please add a valid email so we can send your quote."></p>
-            <div class="qw-nav">
-              <button type="button" class="qw-back">← Back</button>
-              <button type="button" class="qw-next">Next</button>
-              <span class="qw-hint">or press <b>Enter ↵</b></span>
-            </div>
-          </div>
-
-          <div class="qw-step" data-required="true">
-            <p class="qw-count">4 of 7</p>
-            <label class="qw-q" for="qf-address">Where should we come to you?</label>
-            <p class="qw-optional">Since we're mobile, we'll need an address to plan the visit.</p>
-            <input type="text" id="qf-address" name="address" autocomplete="street-address" placeholder="Street address, city">
-            <p class="qw-err" data-msg="Please add an address so we know where to bring the detail."></p>
-            <div class="qw-nav">
-              <button type="button" class="qw-back">← Back</button>
-              <button type="button" class="qw-next">Next</button>
-              <span class="qw-hint">or press <b>Enter ↵</b></span>
-            </div>
-          </div>
-
-          <div class="qw-step">
-            <p class="qw-count">5 of 7</p>
-            <label class="qw-q" for="qf-vehicle">What are we detailing?</label>
-            <p class="qw-optional">Year, make &amp; model — optional but helps us quote faster.</p>
-            <input type="text" id="qf-vehicle" name="vehicle" placeholder="e.g. 2018 Honda Accord">
-            <p class="qw-err"></p>
-            <div class="qw-nav">
-              <button type="button" class="qw-back">← Back</button>
-              <button type="button" class="qw-next">Next</button>
-              <span class="qw-hint">or press <b>Enter ↵</b></span>
-            </div>
-          </div>
-
-
-          <div class="qw-step">
-            <p class="qw-count">6 of 7</p>
-            <span class="qw-q">Which service are you interested in?</span>
-            <div class="qw-options">
-              <label class="qw-option"><input type="radio" name="service" value="Interior Detail" checked>Interior Detail</label>
-              <label class="qw-option"><input type="radio" name="service" value="Exterior Detail">Exterior Detail</label>
-              <label class="qw-option"><input type="radio" name="service" value="Full Detail Package">Full Detail Package</label>
-              <label class="qw-option"><input type="radio" name="service" value="Ceramic Coating">Ceramic Coating</label>
-              <label class="qw-option"><input type="radio" name="service" value="Paint Correction">Paint Correction</label>
-              <label class="qw-option"><input type="radio" name="service" value="Maintenance Plan">Maintenance Plan</label>
-              <label class="qw-option"><input type="radio" name="service" value="Not sure yet / other">Not sure yet / other</label>
-            </div>
-            <p class="qw-err"></p>
-            <div class="qw-nav">
-              <button type="button" class="qw-back">← Back</button>
-              <button type="button" class="qw-next">Next</button>
-            </div>
-          </div>
-
-          <div class="qw-step" data-required="true" data-service-gate="Maintenance Plan">
-            <p class="qw-count">One more thing</p>
-            <span class="qw-q">Have you booked with Schorr Shine before?</span>
-            <p class="qw-optional">Maintenance Plans keep an already-detailed car looking sharp, so we need a baseline to work from first.</p>
-            <div class="qw-options">
-              <label class="qw-option"><input type="radio" name="purchased_before" value="Yes">Yes, I've booked with you before</label>
-              <label class="qw-option"><input type="radio" name="purchased_before" value="No">No, this would be my first time</label>
-            </div>
-            <p class="qw-optional" id="qwMaintNote" hidden>No problem — since Maintenance Plans start after an initial Full Detail, we'll set you up with a Full Detail Package instead. You can start a maintenance plan right after.</p>
-            <p class="qw-err" data-msg="Please let us know if you've booked with us before."></p>
-            <div class="qw-nav">
-              <button type="button" class="qw-back">← Back</button>
-              <button type="button" class="qw-next">Next</button>
-            </div>
-          </div>
-
-          <div class="qw-step">
-            <p class="qw-count">7 of 7</p>
-            <label class="qw-q" for="qf-message">Anything else we should know?</label>
-            <p class="qw-optional">Stains, scratches, preferred dates — optional.</p>
-            <textarea id="qf-message" name="message" placeholder="Type here..."></textarea>
-            <p class="qw-err"></p>
-            <div class="qw-nav">
-              <button type="button" class="qw-back">← Back</button>
-              <button type="submit" class="qw-next" id="qwSubmit">Send Request</button>
-            </div>
-            <p class="qw-status" id="qwStatus" role="status" aria-live="polite"></p>
-          </div>
-        </form>
-      </div>
-      <div class="qw-success" id="qwSuccess">
-        <i class="ti ti-circle-check" aria-hidden="true"></i>
-        <h3>Request sent!</h3>
-        <p>Thanks — we've got your details and will text or email you shortly with a quote.</p>
-      </div>
-    </div>
+    <p class="section-eyebrow">Prefer to Talk First?</p>
+    <h2 class="cta-title">Call, text, or find us online.</h2>
+    <p class="cta-sub">We usually reply within a few hours.</p>
 
     <div class="cta-contact">
       <div class="contact-item">
