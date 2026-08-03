@@ -374,8 +374,16 @@
         <h3 class="svc-name">Exterior Detail</h3>
         <p class="svc-desc">Hand wash, clay bar, ceramic sealant, and a full wheel &amp; tire treatment — so the outside looks
           every bit as good as the inside.</p>
+        <div class="svc-includes">
+          <span>Hand wash &amp; dry</span>
+          <span>Clay bar treatment</span>
+          <span>Ceramic sealant application</span>
+          <span>Wheel &amp; tire cleaning</span>
+          <span>Tire dressing</span>
+        </div>
+        <p class="svc-price">Starting at $129</p>
         <p class="svc-ideal"><b>Ideal for:</b> owners who want the exterior to hold its shine long after we leave, not just look good for a week.</p>
-        <span class="svc-badge">Coming soon</span>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
 
       <div class="svc">
@@ -383,8 +391,34 @@
         <h3 class="svc-name">Full Detail Package</h3>
         <p class="svc-desc">Our complete top-to-bottom treatment — interior and exterior combined into one all-day
           transformation.</p>
+        <div class="svc-includes">
+          <span>Everything in Interior Detail</span>
+          <span>Everything in Exterior Detail</span>
+          <span>One all-day appointment</span>
+        </div>
+        <p class="svc-price">Starting at $249</p>
         <p class="svc-ideal"><b>Ideal for:</b> anyone who wants the whole car handled at once, without booking two separate visits.</p>
-        <span class="svc-badge">Coming soon</span>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><i class="ti ti-shield" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Ceramic Coating</h3>
+        <p class="svc-desc">A durable, professional-grade coating that bonds to your paint — locking in shine and
+          protection well beyond what a wax or sealant can do.</p>
+        <p class="svc-price">Starting at $499</p>
+        <p class="svc-ideal"><b>Ideal for:</b> owners who want serious, long-term protection instead of reapplying wax every few months.</p>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon"><i class="ti ti-wand" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Paint Correction</h3>
+        <p class="svc-desc">A one-step machine polish that removes light swirls, scratches, and oxidation —
+          restoring clarity and depth to your paint.</p>
+        <p class="svc-price">Starting at $409</p>
+        <p class="svc-ideal"><b>Ideal for:</b> cars with visible swirl marks or dullness that washing alone won't fix.</p>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
 
       <div class="svc">
@@ -392,8 +426,9 @@
         <h3 class="svc-name">Maintenance Plan</h3>
         <p class="svc-desc">Recurring visits on a schedule that fits your life, so your car always looks like it just
           left the shop.</p>
+        <p class="svc-price">Custom pricing</p>
         <p class="svc-ideal"><b>Ideal for:</b> owners who already got the full treatment and just want to keep it that way.</p>
-        <span class="svc-badge">Coming soon</span>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
 
     </div>
@@ -538,7 +573,7 @@
           <p class="hp-field"><label>Leave this field blank: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
           <div class="qw-step" data-required="true">
-            <p class="qw-count">1 of 8</p>
+            <p class="qw-count">1 of 7</p>
             <label class="qw-q" for="qf-name">First things first — what's your name?</label>
             <input type="text" id="qf-name" name="name" autocomplete="name" placeholder="Your name">
             <p class="qw-err" data-msg="Please enter your name so we know who to reach out to."></p>
@@ -549,7 +584,7 @@
           </div>
 
           <div class="qw-step" data-required="true">
-            <p class="qw-count">2 of 8</p>
+            <p class="qw-count">2 of 7</p>
             <label class="qw-q" for="qf-phone">What's the best number to text you a quote?</label>
             <input type="tel" id="qf-phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555">
             <p class="qw-err" data-msg="We need a phone number to send your quote."></p>
@@ -560,12 +595,11 @@
             </div>
           </div>
 
-          <div class="qw-step">
-            <p class="qw-count">3 of 8</p>
-            <label class="qw-q" for="qf-email">Got an email too?</label>
-            <p class="qw-optional">Optional — skip if you'd rather just text.</p>
+          <div class="qw-step" data-required="true">
+            <p class="qw-count">3 of 7</p>
+            <label class="qw-q" for="qf-email">What's your email?</label>
             <input type="email" id="qf-email" name="email" autocomplete="email" placeholder="you@example.com">
-            <p class="qw-err" data-msg="That email doesn't look right — fix it or leave it blank."></p>
+            <p class="qw-err" data-msg="Please add a valid email so we can send your quote."></p>
             <div class="qw-nav">
               <button type="button" class="qw-back">← Back</button>
               <button type="button" class="qw-next">Next</button>
@@ -574,7 +608,7 @@
           </div>
 
           <div class="qw-step" data-required="true">
-            <p class="qw-count">4 of 8</p>
+            <p class="qw-count">4 of 7</p>
             <label class="qw-q" for="qf-address">Where should we come to you?</label>
             <p class="qw-optional">Since we're mobile, we'll need an address to plan the visit.</p>
             <input type="text" id="qf-address" name="address" autocomplete="street-address" placeholder="Street address, city">
@@ -587,7 +621,7 @@
           </div>
 
           <div class="qw-step">
-            <p class="qw-count">5 of 8</p>
+            <p class="qw-count">5 of 7</p>
             <label class="qw-q" for="qf-vehicle">What are we detailing?</label>
             <p class="qw-optional">Year, make &amp; model — optional but helps us quote faster.</p>
             <input type="text" id="qf-vehicle" name="vehicle" placeholder="e.g. 2018 Honda Accord">
@@ -599,26 +633,17 @@
             </div>
           </div>
 
-          <div class="qw-step">
-            <p class="qw-count">6 of 8</p>
-            <span class="qw-q">Any pet hair in the car?</span>
-            <p class="qw-optional">Helps us bring the right tools for the job.</p>
-            <div class="qw-options">
-              <label class="qw-option"><input type="radio" name="pet_hair" value="No" checked>No pet hair</label>
-              <label class="qw-option"><input type="radio" name="pet_hair" value="Yes">Yes, there's pet hair</label>
-            </div>
-            <p class="qw-err"></p>
-            <div class="qw-nav">
-              <button type="button" class="qw-back">← Back</button>
-              <button type="button" class="qw-next">Next</button>
-            </div>
-          </div>
 
           <div class="qw-step">
-            <p class="qw-count">7 of 8</p>
+            <p class="qw-count">6 of 7</p>
             <span class="qw-q">Which service are you interested in?</span>
             <div class="qw-options">
               <label class="qw-option"><input type="radio" name="service" value="Interior Detail" checked>Interior Detail</label>
+              <label class="qw-option"><input type="radio" name="service" value="Exterior Detail">Exterior Detail</label>
+              <label class="qw-option"><input type="radio" name="service" value="Full Detail Package">Full Detail Package</label>
+              <label class="qw-option"><input type="radio" name="service" value="Ceramic Coating">Ceramic Coating</label>
+              <label class="qw-option"><input type="radio" name="service" value="Paint Correction">Paint Correction</label>
+              <label class="qw-option"><input type="radio" name="service" value="Maintenance Plan">Maintenance Plan</label>
               <label class="qw-option"><input type="radio" name="service" value="Not sure yet / other">Not sure yet / other</label>
             </div>
             <p class="qw-err"></p>
@@ -628,8 +653,24 @@
             </div>
           </div>
 
+          <div class="qw-step" data-required="true" data-service-gate="Maintenance Plan">
+            <p class="qw-count">One more thing</p>
+            <span class="qw-q">Have you booked with Schorr Shine before?</span>
+            <p class="qw-optional">Maintenance Plans keep an already-detailed car looking sharp, so we need a baseline to work from first.</p>
+            <div class="qw-options">
+              <label class="qw-option"><input type="radio" name="purchased_before" value="Yes">Yes, I've booked with you before</label>
+              <label class="qw-option"><input type="radio" name="purchased_before" value="No">No, this would be my first time</label>
+            </div>
+            <p class="qw-optional" id="qwMaintNote" hidden>No problem — since Maintenance Plans start after an initial Full Detail, we'll set you up with a Full Detail Package instead. You can start a maintenance plan right after.</p>
+            <p class="qw-err" data-msg="Please let us know if you've booked with us before."></p>
+            <div class="qw-nav">
+              <button type="button" class="qw-back">← Back</button>
+              <button type="button" class="qw-next">Next</button>
+            </div>
+          </div>
+
           <div class="qw-step">
-            <p class="qw-count">8 of 8</p>
+            <p class="qw-count">7 of 7</p>
             <label class="qw-q" for="qf-message">Anything else we should know?</label>
             <p class="qw-optional">Stains, scratches, preferred dates — optional.</p>
             <textarea id="qf-message" name="message" placeholder="Type here..."></textarea>
@@ -785,28 +826,83 @@
     }
 
     function qwValidate(step) {
-      var field = step.querySelector('input:not([type=radio]):not([type=hidden]), textarea');
       qwSetError(step, '');
-      if (!field) return true;
-      var val = field.value.trim();
-      if (step.dataset.required === 'true' && !val) {
-        qwSetError(step, step.querySelector('.qw-err').dataset.msg || 'This field is required.');
-        field.focus();
-        return false;
+      var field = step.querySelector('input:not([type=radio]):not([type=hidden]), textarea');
+      if (field) {
+        var val = field.value.trim();
+        if (step.dataset.required === 'true' && !val) {
+          qwSetError(step, step.querySelector('.qw-err').dataset.msg || 'This field is required.');
+          field.focus();
+          return false;
+        }
+        if (val && !field.checkValidity()) {
+          qwSetError(step, step.querySelector('.qw-err').dataset.msg || 'Please check this field.');
+          field.focus();
+          return false;
+        }
+        return true;
       }
-      if (val && !field.checkValidity()) {
-        qwSetError(step, step.querySelector('.qw-err').dataset.msg || 'Please check this field.');
-        field.focus();
-        return false;
+      // radio-only steps (e.g. the maintenance-plan gate)
+      if (step.dataset.required === 'true' && step.querySelector('input[type=radio]')) {
+        var checked = step.querySelector('input[type=radio]:checked');
+        if (!checked) {
+          var errEl = step.querySelector('.qw-err');
+          qwSetError(step, errEl ? (errEl.dataset.msg || 'Please select an option.') : 'Please select an option.');
+          return false;
+        }
       }
       return true;
     }
 
+    // Show/hide the informational note when answering the maintenance-plan gate
+    var qwMaintNote = document.getElementById('qwMaintNote');
+    qwForm.querySelectorAll('input[name="purchased_before"]').forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        if (qwMaintNote) qwMaintNote.hidden = (radio.value !== 'No' || !radio.checked);
+      });
+    });
+
+    function qwNextIndex(fromIndex) {
+      var target = fromIndex + 1;
+      var targetStep = qwSteps[target];
+      // skip the maintenance-plan gate unless that service is actually selected
+      if (targetStep && targetStep.dataset.serviceGate) {
+        var svc = qwForm.querySelector('input[name="service"]:checked');
+        if (!svc || svc.value !== targetStep.dataset.serviceGate) {
+          target += 1;
+        }
+      }
+      return target;
+    }
+
+    function qwPrevIndex(fromIndex) {
+      var target = fromIndex - 1;
+      var targetStep = qwSteps[target];
+      if (targetStep && targetStep.dataset.serviceGate) {
+        var svc = qwForm.querySelector('input[name="service"]:checked');
+        var answered = qwForm.querySelector('input[name="purchased_before"]:checked');
+        if (!answered && (!svc || svc.value !== targetStep.dataset.serviceGate)) {
+          target -= 1;
+        }
+      }
+      return target;
+    }
+
     qwForm.addEventListener('click', function(e) {
       if (e.target.classList.contains('qw-next') && e.target.type !== 'submit') {
-        if (qwValidate(qwSteps[qwCurrent])) qwShow(qwCurrent + 1);
+        var current = qwSteps[qwCurrent];
+        if (!qwValidate(current)) return;
+        // if they said "No" on the maintenance-plan gate, switch them to Full Detail Package
+        if (current.dataset.serviceGate) {
+          var purchased = qwForm.querySelector('input[name="purchased_before"]:checked');
+          if (purchased && purchased.value === 'No') {
+            var fullDetail = qwForm.querySelector('input[name="service"][value="Full Detail Package"]');
+            if (fullDetail) fullDetail.checked = true;
+          }
+        }
+        qwShow(qwNextIndex(qwCurrent));
       } else if (e.target.classList.contains('qw-back')) {
-        qwShow(qwCurrent - 1);
+        qwShow(qwPrevIndex(qwCurrent));
       }
     });
 
@@ -816,8 +912,16 @@
       var isLast = qwCurrent === qwSteps.length - 1;
       if (isTextarea && e.shiftKey) return; // allow newline
       e.preventDefault();
-      if (!qwValidate(qwSteps[qwCurrent])) return;
-      if (isLast) { qwForm.requestSubmit(); } else { qwShow(qwCurrent + 1); }
+      var current = qwSteps[qwCurrent];
+      if (!qwValidate(current)) return;
+      if (current.dataset.serviceGate) {
+        var purchased = qwForm.querySelector('input[name="purchased_before"]:checked');
+        if (purchased && purchased.value === 'No') {
+          var fullDetail = qwForm.querySelector('input[name="service"][value="Full Detail Package"]');
+          if (fullDetail) fullDetail.checked = true;
+        }
+      }
+      if (isLast) { qwForm.requestSubmit(); } else { qwShow(qwNextIndex(qwCurrent)); }
     });
 
     qwForm.addEventListener('submit', function(e) {
