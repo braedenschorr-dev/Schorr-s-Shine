@@ -2,15 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DFL8X1NS8G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DFL8X1NS8G');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Schorr Shine | Mobile Detailing</title>
@@ -52,7 +43,7 @@
     .nav-links.open{display:flex}
 
     .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:5rem 2.5rem 4rem;border-bottom:0.5px solid rgba(36,120,240,0.15);position:relative;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;z-index:0}
+    .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%;z-index:0}
     .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(6,9,14,0.94) 0%,rgba(6,9,14,0.82) 45%,rgba(6,9,14,0.45) 100%),linear-gradient(to top,rgba(6,9,14,0.85),transparent 40%);z-index:1}
     .hero-content{position:relative;z-index:2;max-width:800px}
     .hero-eyebrow{font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:#2f80f5;margin-bottom:1.5rem}
@@ -89,9 +80,7 @@
     .svc-includes{margin-top:0.5rem;display:flex;flex-direction:column;gap:0.4rem}
     .svc-includes span{font-size:0.84rem;color:#9fadbb;display:flex;align-items:center;gap:0.4rem}
     .svc-includes span::before{content:'—';color:rgba(36,120,240,0.5);flex-shrink:0}
-    .svc-price{margin-top:auto;padding-top:1.25rem;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;color:#2f80f5;text-transform:uppercase}
-    .svc-price-note{margin-top:0.3rem;font-size:0.78rem;color:#8090a0;line-height:1.5}
-    .svc-ideal{margin-top:0.9rem;font-size:0.82rem;color:#8090a0;line-height:1.6}
+    .svc-ideal{margin-top:auto;padding-top:1.25rem;font-size:0.82rem;color:#8090a0;line-height:1.6}
     .svc-ideal b{color:#2f80f5;font-weight:600}
     .svc-badge{display:inline-block;margin-top:0.6rem;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;background:rgba(36,120,240,0.1);color:#2f80f5;border:0.5px solid rgba(36,120,240,0.3);padding:0.3rem 0.7rem;align-self:flex-start;border-radius:2px}
     .svc-badge.is-live{background:#2f80f5;color:#ffffff;border:none;font-weight:600;cursor:pointer;transition:background 0.2s;align-self:stretch;text-align:center;padding:0.9rem 1rem;font-size:0.88rem;margin-top:1.25rem}
@@ -156,7 +145,7 @@
     .footer-links{display:flex;gap:1.25rem;align-items:center}
     .footer-links a{font-size:0.75rem;color:#6c7987;letter-spacing:0.05em;text-decoration:none}
     .footer-links a:hover{color:#2f80f5}
-    
+
     .quote-wizard{max-width:640px;margin:2.5rem auto 0;border:0.5px solid rgba(36,120,240,0.3);border-radius:4px;background:#0b0e13;text-align:left;overflow:hidden}
     .qw-progress{height:4px;background:rgba(36,120,240,0.15)}
     .qw-progress-fill{height:100%;background:#2f80f5;width:0;transition:width 0.3s ease}
@@ -245,7 +234,7 @@
       .nav-links a{padding:0.85rem 1.25rem;width:100%}
       .nav-toggle{display:flex}
       .hero{padding:4rem 1.25rem 3rem}
-      .hero-bg{object-position:center 30%}
+      .hero-bg{object-position:center 55%}
       .hero-overlay{background:linear-gradient(to top,rgba(6,9,14,0.95) 25%,rgba(6,9,14,0.72))}
       section{padding:3.5rem 1.25rem}
       .trust{gap:1rem;flex-wrap:wrap;padding:1.75rem 1.25rem}
@@ -408,6 +397,8 @@
               <label class="qw-option"><input type="radio" name="service" value="Interior Detail" checked>Interior Detail</label>
               <label class="qw-option"><input type="radio" name="service" value="Exterior Detail">Exterior Detail</label>
               <label class="qw-option"><input type="radio" name="service" value="Full Detail Package">Full Detail Package</label>
+              <label class="qw-option"><input type="radio" name="service" value="Ceramic Coating">Ceramic Coating</label>
+              <label class="qw-option"><input type="radio" name="service" value="Paint Correction">Paint Correction</label>
               <label class="qw-option"><input type="radio" name="service" value="Maintenance Plan">Maintenance Plan</label>
               <label class="qw-option"><input type="radio" name="service" value="Not sure yet / other">Not sure yet / other</label>
             </div>
@@ -420,10 +411,10 @@
 
           <div class="qw-step" data-required="true" data-service-gate="Maintenance Plan">
             <p class="qw-count">One more thing</p>
-            <span class="qw-q">Have you detailed your car in the last 3 months?</span>
+            <span class="qw-q">Have you booked with Schorr Shine before?</span>
             <p class="qw-optional">Maintenance Plans keep an already-detailed car looking sharp, so we need a baseline to work from first.</p>
             <div class="qw-options">
-              <label class="qw-option"><input type="radio" name="purchased_before" value="Yes">Yes, I've had my car detailed</label>
+              <label class="qw-option"><input type="radio" name="purchased_before" value="Yes">Yes, I've booked with you before</label>
               <label class="qw-option"><input type="radio" name="purchased_before" value="No">No, this would be my first time</label>
             </div>
             <p class="qw-optional" id="qwMaintNote" hidden>No problem — since Maintenance Plans start after an initial Full Detail, we'll set you up with a Full Detail Package instead. You can start a maintenance plan right after.</p>
@@ -472,11 +463,11 @@
   <section class="areas">
     <p class="section-eyebrow">Where We Detail</p>
     <h2 class="section-title">Serving the Capital Region, NY</h2>
-    <p class="section-intro" style="margin:0 auto">We bring the shop to you across the Capital Region — including these towns and the areas around them.</p>
+    <p class="section-intro" style="margin:0 auto">We bring the shop to you across the Capital Region — including these counties and the surrounding towns.</p>
     <div class="area-pills">
-      <span class="area-pill">Altamont</span>
-      <span class="area-pill">Guilderland</span>
-      <span class="area-pill">Troy</span>
+      <span class="area-pill">Albany County</span>
+      <span class="area-pill">Saratoga County</span>
+      <span class="area-pill">Schenectady County</span>
       <span class="area-pill is-more">+ surrounding towns</span>
     </div>
   </section>
@@ -505,7 +496,6 @@
           <span>Seat shampoo</span>
           <span>Carpet &amp; floor mat extraction</span>
         </div>
-        <p class="svc-price">Starting at $249.99</p>
         <p class="svc-ideal"><b>Ideal for:</b> anyone whose interior hasn't been properly cleaned in months and wants it handled completely, in one visit.</p>
         <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
@@ -522,7 +512,6 @@
           <span>Wheel &amp; tire cleaning</span>
           <span>Tire dressing</span>
         </div>
-        <p class="svc-price">Starting at $189.99</p>
         <p class="svc-ideal"><b>Ideal for:</b> owners who want the exterior to hold its shine long after we leave, not just look good for a week.</p>
         <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
@@ -537,7 +526,6 @@
           <span>Everything in Exterior Detail</span>
           <span>One all-day appointment</span>
         </div>
-        <p class="svc-price">Starting at $324.99</p>
         <p class="svc-ideal"><b>Ideal for:</b> anyone who wants the whole car handled at once, without booking two separate visits.</p>
         <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
@@ -548,7 +536,7 @@
         <p class="svc-desc">A durable, professional-grade coating that bonds to your paint — locking in shine and
           protection well beyond what a wax or sealant can do.</p>
         <p class="svc-ideal"><b>Ideal for:</b> owners who want serious, long-term protection instead of reapplying wax every few months.</p>
-        <span class="svc-badge">Coming soon</span>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Now</button>
       </div>
 
       <div class="svc">
@@ -557,7 +545,7 @@
         <p class="svc-desc">A one-step machine polish that removes light swirls, scratches, and oxidation —
           restoring clarity and depth to your paint.</p>
         <p class="svc-ideal"><b>Ideal for:</b> cars with visible swirl marks or dullness that washing alone won't fix.</p>
-        <span class="svc-badge">Coming soon</span>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Now</button>
       </div>
 
       <div class="svc">
@@ -565,7 +553,6 @@
         <h3 class="svc-name">Maintenance Plan</h3>
         <p class="svc-desc">Recurring visits on a schedule that fits your life, so your car always looks like it just
           left the shop.</p>
-        <p class="svc-price">Custom pricing</p>
         <p class="svc-ideal"><b>Ideal for:</b> owners who already got the full treatment and just want to keep it that way.</p>
         <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
@@ -715,7 +702,6 @@
       <a href="privacy.html">Privacy Policy</a>
     </div>
     <span class="footer-copy">© 2026 Schorr Shine · Mobile Detailing · All rights reserved</span>
- <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"d74d3b185649695421a630765eda6c4d"})});</script>
   </footer>
 
   <div class="modal-overlay" id="contactModalOverlay">
@@ -1035,6 +1021,7 @@
         });
     });
   </script>
+
 </body>
 
 </html>
