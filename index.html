@@ -249,7 +249,6 @@
       html{scroll-behavior:auto}
     }
   </style>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 
 <body>
@@ -498,7 +497,7 @@
           <span>Carpet &amp; floor mat extraction</span>
         </div>
         <p class="svc-ideal"><b>Ideal for:</b> anyone whose interior hasn't been properly cleaned in months and wants it handled completely, in one visit.</p>
-        <button class="svc-badge is-live js-book" type="button" data-calendly="https://calendly.com/schorrshine/interior-detail?background_color=0b0c0e&text_color=f2f0eb&primary_color=0784ff&hide_gdpr_banner=1">Book Today</button>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
 
       <div class="svc">
@@ -514,7 +513,7 @@
           <span>Tire dressing</span>
         </div>
         <p class="svc-ideal"><b>Ideal for:</b> owners who want the exterior to hold its shine long after we leave, not just look good for a week.</p>
-        <button class="svc-badge is-live js-book" type="button" data-calendly="https://calendly.com/schorrshine/exterior-detail?background_color=0b0c0e&text_color=f2f0eb&primary_color=0784ff&hide_gdpr_banner=1">Book Today</button>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
 
       <div class="svc">
@@ -528,7 +527,7 @@
           <span>One all-day appointment</span>
         </div>
         <p class="svc-ideal"><b>Ideal for:</b> anyone who wants the whole car handled at once, without booking two separate visits.</p>
-        <button class="svc-badge is-live js-book" type="button" data-calendly="https://calendly.com/schorrshine/full-detail-package?background_color=0b0c0e&text_color=f2f0eb&primary_color=0784ff&hide_gdpr_banner=1">Book Today</button>
+        <button class="svc-badge is-live js-quote-trigger" type="button">Book Today</button>
       </div>
 
       <div class="svc">
@@ -756,7 +755,6 @@
     <button class="btn-primary js-quote-trigger" type="button">Get a Free Quote</button>
   </div>
 
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script>
     var toggle = document.getElementById('navToggle');
     var links = document.getElementById('navLinks');
@@ -768,18 +766,6 @@
       link.addEventListener('click', function() {
         links.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // --- Calendly booking popups (Interior / Exterior / Full Detail) ---
-    document.querySelectorAll('.js-book').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var url = btn.getAttribute('data-calendly');
-        if (window.Calendly && Calendly.initPopupWidget) {
-          Calendly.initPopupWidget({url: url});
-        } else {
-          window.open(url, '_blank', 'noopener');
-        }
       });
     });
 
